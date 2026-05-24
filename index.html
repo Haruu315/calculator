@@ -23,7 +23,7 @@
     <button>-</button>
     <br>
     <button onclick="pressNumber('0')">0</button>
-    <button onclick="pressPlus('+')">+</button>
+    <button onclick="pressPlus()">+</button>
 
     <script>
         let firstNumber = null;
@@ -38,9 +38,10 @@
             }
         }
 
-        function pressPlus(n) {
-            display.textContent = n;
-            display.textContent = operator;
+        function pressPlus() {
+            firstNumber = display.textContent;
+            operator = '+';
+            display.textContent = '0';
         }
     </script>
 </body>
