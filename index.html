@@ -24,6 +24,7 @@
     <br>
     <button onclick="pressNumber('0')">0</button>
     <button onclick="pressPlus()">+</button>
+    <button onclick="pressEqual()">=</button>
 
     <script>
         let firstNumber = null;
@@ -42,6 +43,11 @@
             firstNumber = display.textContent;
             operator = '+';
             display.textContent = '0';
+        }
+
+        function pressEqual() {
+            let result = Number(firstNumber) + Number(display.textContent);
+            display.textContent = result;
         }
     </script>
 </body>
