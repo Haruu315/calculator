@@ -24,5 +24,17 @@
     <br>
     <button>0</button>
     <button>+</button>
+
+    <script>
+        let display = document.getElementById('display');
+
+        function pressNumber(n) {
+            if (display.textContent === '0') {
+                display.textContent = n;
+            } else {
+                display.textContent = display.textContent + n;
+            }
+        }
+    </script>
 </body>
 </html>
