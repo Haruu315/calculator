@@ -10,17 +10,17 @@
     <button onclick="pressNumber('7')">7</button> <!--'7'関数に渡すための引数-->
     <button onclick="pressNumber('8')">8</button>
     <button onclick="pressNumber('9')">9</button>
-    <button onclick="">÷</button>
+    <button onclick="press割り算()">÷</button>
     <br>
     <button onclick="pressNumber('4')">4</button>
     <button onclick="pressNumber('5')">5</button>
     <button onclick="pressNumber('6')">6</button>
-    <button>×</button>
+    <button onclick="press掛け算()">×</button>
     <br>
     <button onclick="pressNumber('1')">1</button>
     <button onclick="pressNumber('2')">2</button>
     <button onclick="pressNumber('3')">3</button>
-    <button>-</button>
+    <button onclick="press引き算()">-</button>
     <br>
     <button onclick="pressNumber('0')">0</button>
     <button onclick="pressPlus()">+</button>
@@ -31,11 +31,11 @@
         let operator = null;
         let display = document.getElementById('display');
 
-        function pressNumber(n) {//buttonが押されたら着火
+        function pressNumber(ここに数字が入ります) {//buttonが押されたら着火、計算する前の数字を組み立てる処理
             if (display.textContent === '0') {
-                display.textContent = n;
+                display.textContent = ここに数字が入ります;
             } else {
-                display.textContent = display.textContent + n;
+                display.textContent = display.textContent + ここに数字が入ります;
             }
         }
 
@@ -45,8 +45,37 @@
             display.textContent = '0';
         }
 
+        function press引き算() {
+            firstNumber = display.textContent;
+            operator = '-';
+            display.textContent = '0';
+        }
+
+        function press割り算() {
+            firstNumber = display.textContent;
+            operator = '÷';
+            display.textContent = '0';
+        }
+
+        function press掛け算() {
+            firstNumber = display.textContent;
+            operator = '×';
+            display.textContent = '0';
+        }
+
         function pressEqual() {
             let result = Number(firstNumber) + Number(display.textContent);
+            display.textContent = result;
+        }
+
+        function pressEqual() {
+            let a = Number(firstNumber);
+            let b = Number(display.textContent);
+            let result;
+            if (operator === '+') result = a + b;
+            if (operator === '-') result = a - b;
+            if (operator === '×') result = a * b;
+            if (operator === '÷') result = a / b;
             display.textContent = result;
         }
     </script>
